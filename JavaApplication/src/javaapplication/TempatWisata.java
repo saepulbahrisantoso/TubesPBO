@@ -7,7 +7,7 @@ package javaapplication;
 
 /**
  *
- * @author 1301144328_Hendrawan
+ * @author 1301144328_HendrawanIF3008
  */
 public class TempatWisata {
     private String nama;
