@@ -8,17 +8,17 @@
  *
  * @author MR.SBS
  */
-public class Petugas extends Orang {
-    string idPetugas;
+public class Pelanggan extends Orang {
+    string idPelanggan;
     
-    Petugas(string nama, string alamat, string idPetugas){
+    Pelanggan(string nama, string alamat, string idPetugas){
         super(nama,alamat);
-        this.idPetugas = idPetugas;
+        this.idPelanggan = idPelanggan;
     }
     void setId(string idPetugas){
-        this.idPetugas=idPetugas;
+        this.idPelanggan=idPelanggan;
     }
     string getId(){
-        return idPetugas;
+        return idPelanggan;
     }
 }
