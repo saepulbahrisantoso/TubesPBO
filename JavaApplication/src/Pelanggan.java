@@ -21,4 +21,8 @@ public class Pelanggan extends Orang {
     string getId(){
         return idPelanggan;
     }
+    
+    void HitungJumlahPerjalanan(PaketWisata paket,pelanggan p){
+        
+    }
 }

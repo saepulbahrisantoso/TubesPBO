@@ -12,17 +12,18 @@ public class Perjalanan {
     PaketWisata paket;
     int jumlahpelanggan;
     Pelanggan[] pelanggan = new Pelanggan[];
-    void addPelanggan(pelanggan p){
-        
+    Perjalanan(){
+        jumlahpelanggan=0;
     }
-    void setPaket(PaketWisata wis){
-        
+    void addPelanggan(Pelanggan p){
+        pelanggan[jumlahpelanggan] = p;
+        jumlahpelanggan++;
     }
-    void HitungJumlahPerjalanan(PaketWisata paket,pelanggan p){
-        
+    void setPaket(PaketWisata paket){
+        this.paket = paket;
     }
     PaketWisata getPaket(){
-        
+       return paket;
     }
     void setJumlahPelanggan(int jumlahpelanggan){
         this.jumlahpelanggan = jumlahpelanggan;
