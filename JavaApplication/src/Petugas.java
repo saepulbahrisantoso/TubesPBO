@@ -9,16 +9,16 @@
  * @author MR.SBS
  */
 public class Petugas extends Orang {
-    string idPetugas;
+    String idPetugas;
     
-    Petugas(string nama, string alamat, string idPetugas){
-        super(nama,alamat);
+    public Petugas(String nama, String alamat, char jeniskelamin, String idPetugas){
+        super(nama,alamat,jeniskelamin);
         this.idPetugas = idPetugas;
     }
-    void setId(string idPetugas){
+    void setId(String idPetugas){
         this.idPetugas=idPetugas;
     }
-    string getId(){
+    String getId(){
         return idPetugas;
     }
 }
