@@ -11,32 +11,35 @@ package javaapplication;
  */
 public class PaketWisata {
     private TempatWisata[] daftarTujuanWisata;
-	private String JenisWisata;
-	private int Kapasitas;
-	private int nTempat=0;
-	private double Biaya;
+    private String JenisWisata; 
+    private int Kapasitas;
+    private int nTempat;
+    private double Biaya;
 	
-	public void addTempatWisata(TempatWisata w){
-		if(nTempat<kapasitas){
-			this.w[nTempat]=w;
-			nTempat++;
-		}
-	}
+    public PaketWisata(){
+        nTempat = 0;
+    }
+    public void addTempatWisata(TempatWisata w){
+        if(nTempat<Kapasitas){
+            this.w[nTempat]=w;
+            nTempat++;
+        }
+    }
 	
-	public double getBiaya(){
-		return Biaya;
-	}
+    public double getBiaya(){
+        return Biaya;
+    }
 	
-	public String getJenisWisata(){
-		return JenisWisata;
-	}
+    public String getJenisWisata(){
+        return JenisWisata;
+    }
 	
-	public int getKapasitas(){
-		return Kapasitas;
-	}
+    public int getKapasitas(){
+        return Kapasitas;
+    }
 	
 	public void setKapasitas(int Kapasitas){
-		this.Kapasitas=Kapasitas;
+            this.Kapasitas=Kapasitas;
 	}
 	
 	public void setBiaya(int Biaya){
