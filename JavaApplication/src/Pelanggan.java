@@ -9,16 +9,16 @@
  * @author MR.SBS
  */
 public class Pelanggan extends Orang {
-    string idPelanggan;
+    String idPelanggan;
     
-    Pelanggan(string nama, string alamat, string idPetugas){
-        super(nama,alamat);
+    public Pelanggan(String nama, String alamat, char jeniskelamin, String idPelanggan){
+        super(nama,alamat,jeniskelamin);
         this.idPelanggan = idPelanggan;
     }
-    void setId(string idPetugas){
+    void setId(String idPetugas){
         this.idPelanggan=idPelanggan;
     }
-    string getId(){
+    String getId(){
         return idPelanggan;
     }
 }

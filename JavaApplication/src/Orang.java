@@ -9,7 +9,7 @@
  *
  * @author 1301144328_Hendrawan
  */
-public class Orang {
+public abstract class Orang {
     private String nama;
     private String alamat;
     private char jenisKelamin; 

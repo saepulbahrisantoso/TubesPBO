@@ -12,6 +12,7 @@ public class Perjalanan {
     PaketWisata paket;
     int jumlahpelanggan;
     Pelanggan[] pelanggan = new Pelanggan[];
+    
     Perjalanan(){
         jumlahpelanggan=0;
     }
