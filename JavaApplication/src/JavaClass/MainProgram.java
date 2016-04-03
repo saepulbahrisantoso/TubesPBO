@@ -43,7 +43,7 @@ public final static void ClearScreen() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Menu Utama Sistem biro perjalanan");
         System.out.println("1. Menu admin");
-        System.out.println("2. Menu non admin");
+        System.out.println("2. Menu non admin [MASIH BETA, PROGRESS SELANJUTNYA KARENA TIDAK ADA DI PROPOSAL]" );
         System.out.print("Pilihan : "); 
         int pilih = scanner.nextInt();
         switch (pilih) {
@@ -66,9 +66,9 @@ public final static void ClearScreen() {
         System.out.println("2. Menu Pelanggan");
         System.out.println("3. Menu Tempat wisata");
         System.out.println("4. Menu Paket wisata");
-        System.out.println("5. Menu perjalanan");
-        System.out.println("6. Exit");
-        System.out.print("Pilihan : ");
+        System.out.println("5. Menu Perjalanan");
+        System.out.println("6. Exit"); 
+        System.out.print("Pilihan : "); 
         int pilih = scanner.nextInt();
         switch (pilih) {
             case 1 : MenuPetugas();
@@ -92,12 +92,14 @@ public final static void ClearScreen() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Menu Kelola Petugas");
         System.out.println("1. Tambah Petugas");
-        System.out.println("2. Edit Petugas");
+        System.out.println("2. Cari Petugas");
         System.out.println("3. Hapus Petugas");
         System.out.println("4. Lihat petugas");
         System.out.println("5. Kembali");
         System.out.print("Pilihan : ");
         int pilih = scanner.nextInt();
+        String id;
+        Petugas x;
         List<Petugas> listpetugas = new ArrayList<Petugas>();
         switch (pilih) {
             case 1 :
@@ -111,32 +113,56 @@ public final static void ClearScreen() {
                     MenuPetugas();
                     break;
             case 2 : 
-                    System.out.println("Masukkan id petugas yang akan diedit : "); String id = scanner.next();
-                    
+                    System.out.println("Masukkan id petugas yang akan dicari : "); id = scanner.next();
+                    x = Search(listpetugas,id);
+                    if(x == null){
+                        System.out.println("Petugas tersebut tidak ada");
+                    } else {
+                        System.out.println("Data Petugas");
+                        System.out.println("ID : " + x.getId());
+                        System.out.println("Nama : " + x.getNama());
+                        System.out.println("Alamat : " + x.getAlamat());
+                        System.out.println("Jenis Kelamin : " + x.getJenisKelamin());
+                    }
+                    MenuPetugas();
                     break;
-            case 3 : MenuTempatWisata();
-                     break;
-            case 4 : MenuPaketWisata();
-                     break;
+            case 3 :
+                    System.out.println("Masukkan id petugas yang akan dihapus : "); id = scanner.next();
+                    MenuPetugas();
+                    break;
+            case 4 :
+                    for(Petugas petugas: listpetugas) {
+                        System.out.println(petugas); 
+                    }
+                    MenuPetugas();
+                    break;
             case 5 : MenuAdmin();
                      break;
             default : System.out.println("Salah input");
-            
-                     break;
+            break;
         }
      }
      public static void AddPetugas(String nama, String alamat, String jk, int jumlah, List list) {
          Petugas petugas = new Petugas(nama,alamat,jk,jumlah);
          list.add(petugas);
      }
-     
+     public Petugas Search(ArrayList<Petugas> list, int id) {
+        Petugas x;
+        for(int i=0;i<list.size();i++){
+            if (list.get(i).getId() == id) {
+                
+            }
+        }
+        return null;
+     }
+
 
      public static void MenuPelanggan(){
         ClearScreen();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Menu Kelola Pelanggan");
         System.out.println("1. Tambah Pelanggan");
-        System.out.println("2. Edit Pelanggan");
+        System.out.println("2. Cari Pelanggan");
         System.out.println("3. Hapus Pelanggan");
         System.out.println("4. Lihat Pelanggan");
         System.out.println("5. Kembali");
