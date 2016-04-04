@@ -61,6 +61,7 @@ public final static void ClearScreen() {
     public static void MenuAdmin() {
         ClearScreen();
         Scanner scanner = new Scanner(System.in);
+        List<Petugas> listpetugas = new ArrayList<Petugas>();
         System.out.println("Menu Admin");
         System.out.println("1. Menu Petugas");
         System.out.println("2. Menu Pelanggan");
@@ -71,7 +72,7 @@ public final static void ClearScreen() {
         System.out.print("Pilihan : "); 
         int pilih = scanner.nextInt();
         switch (pilih) {
-            case 1 : MenuPetugas();
+            case 1 : MenuPetugas(listpetugas);
                      break;
             case 2 : MenuPelanggan();
                      break;
@@ -87,8 +88,8 @@ public final static void ClearScreen() {
                      break;
         }
     }
-     public static void MenuPetugas(){
-        ClearScreen();
+     public static void MenuPetugas(List<Petugas> listpetugas){
+        //ClearScreen();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Menu Kelola Petugas");
         System.out.println("1. Tambah Petugas");
@@ -98,9 +99,8 @@ public final static void ClearScreen() {
         System.out.println("5. Kembali");
         System.out.print("Pilihan : ");
         int pilih = scanner.nextInt();
-        String id;
+        int id;
         Petugas x;
-        List<Petugas> listpetugas = new ArrayList<Petugas>();
         switch (pilih) {
             case 1 :
                     int jumlah = listpetugas.size();
@@ -110,10 +110,10 @@ public final static void ClearScreen() {
                     jumlah++;
                     AddPetugas(nama,alamat,jk,jumlah,listpetugas);
                     System.out.println("Petugas berhasi ditambahkan ! ");
-                    MenuPetugas();
+                    MenuPetugas(listpetugas);
                     break;
             case 2 : 
-                    System.out.println("Masukkan id petugas yang akan dicari : "); id = scanner.next();
+                    System.out.println("Masukkan id petugas yang akan dicari : "); id = scanner.nextInt();
                     x = Search(listpetugas,id);
                     if(x == null){
                         System.out.println("Petugas tersebut tidak ada");
@@ -124,17 +124,18 @@ public final static void ClearScreen() {
                         System.out.println("Alamat : " + x.getAlamat());
                         System.out.println("Jenis Kelamin : " + x.getJenisKelamin());
                     }
-                    MenuPetugas();
+                    MenuPetugas(listpetugas);
                     break;
             case 3 :
-                    System.out.println("Masukkan id petugas yang akan dihapus : "); id = scanner.next();
-                    MenuPetugas();
+                    System.out.println("Masukkan id petugas yang akan dihapus : "); id = scanner.nextInt();
+                    MenuPetugas(listpetugas);
                     break;
             case 4 :
                     for(Petugas petugas: listpetugas) {
                         System.out.println(petugas); 
                     }
-                    MenuPetugas();
+                    System.out.println("asasas1");
+                    MenuPetugas(listpetugas);
                     break;
             case 5 : MenuAdmin();
                      break;
@@ -146,14 +147,15 @@ public final static void ClearScreen() {
          Petugas petugas = new Petugas(nama,alamat,jk,jumlah);
          list.add(petugas);
      }
-     public Petugas Search(ArrayList<Petugas> list, int id) {
-        Petugas x;
+     public static Petugas Search(List<Petugas> list, int id) {
+        Petugas x = null;
         for(int i=0;i<list.size();i++){
             if (list.get(i).getId() == id) {
-                
+                x = list.get(i);
+                break;
             }
         }
-        return null;
+        return x;
      }
 
 
@@ -206,7 +208,7 @@ public final static void ClearScreen() {
         System.out.print("Pilihan : ");
         int pilih = scanner.nextInt();
         switch (pilih) {
-            case 1 : MenuPetugas();
+            case 1 : //MenuPetugas(listpetugas);
                      break;
             case 2 : MenuPelanggan();
                      break;
@@ -231,7 +233,7 @@ public final static void ClearScreen() {
         System.out.print("Pilihan : ");
         int pilih = scanner.nextInt();
         switch (pilih) {
-            case 1 : MenuPetugas();
+            case 1 : //MenuPetugas();
                      break;
             case 2 : MenuPelanggan();
                      break;
@@ -255,7 +257,7 @@ public final static void ClearScreen() {
         System.out.print("Pilihan : ");
         int pilih = scanner.nextInt();
         switch (pilih) {
-            case 1 : MenuPetugas();
+            case 1 : //MenuPetugas(listpetugas);
                      break;
             case 2 : MenuPelanggan();
                      break;
@@ -282,7 +284,7 @@ public final static void ClearScreen() {
         System.out.print("Pilihan : ");
         int pilih = scanner.nextInt();
         switch (pilih) {
-            case 1 : MenuPetugas();
+            case 1 : //MenuPetugas(listpetugas);
                      break;
             case 2 : MenuPelanggan();
                      break;

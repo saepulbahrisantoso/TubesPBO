@@ -1,0 +1,54 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package JavaClass;
+
+//import javaapplication.TempatWisata;
+
+/**
+ *
+ * @author Amalia
+ */
+public class PaketWisata {
+    private TempatWisata[] daftarTujuanWisata;
+    private String JenisWisata; 
+    private int Kapasitas;
+    private int nTempat;
+    private double Biaya;
+	
+    public PaketWisata(){
+        nTempat = 0;
+    }
+    public void addTempatWisata(TempatWisata w){
+        if(nTempat<Kapasitas){
+            this.w[nTempat]=w;
+            nTempat++;
+        }
+    }
+	
+    public double getBiaya(){
+        return Biaya;
+    }
+	
+    public String getJenisWisata(){
+        return JenisWisata;
+    }
+	
+    public int getKapasitas(){
+        return Kapasitas;
+    }
+	
+	public void setKapasitas(int Kapasitas){
+            this.Kapasitas=Kapasitas;
+	}
+	
+	public void setBiaya(int Biaya){
+		this.Biaya=Biaya;
+	}
+	
+	public void setJenisWisata(String JenisWisata){
+		this.JenisWisata=JenisWisata;
+	}
+}
