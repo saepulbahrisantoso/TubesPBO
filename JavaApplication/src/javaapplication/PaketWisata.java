@@ -6,7 +6,8 @@
  */
 package javaapplication;
 
-import java.util.ArrayList;
+import java.util.*;
+import java.io.*;
 
 /**
  *
@@ -17,9 +18,14 @@ public class PaketWisata {
     private String JenisWisata; 
     private int Kapasitas;
     private double Biaya;
+    private int idPaket;
 	
-    public PaketWisata(TempatWisata w, String JW, int Kap, double Biaya){
+    public PaketWisata(int idPaket, TempatWisata w, String JW, int Kap, double Biaya){
         
+    }
+    
+    public int getId(){
+        return idPaket;
     }
     
     public void addTempatWisata(TempatWisata w){

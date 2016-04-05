@@ -4,15 +4,17 @@ package javaapplication;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+import java.util.*;
+import java.io.*;
 
 /**
  *
  * @author MR.SBS
  */
-public class Pelanggan extends Orang {
+public class Pelanggan extends Orang implements Serializable {
     int idPelanggan;
     
-    public Pelanggan(String nama, String alamat, char jeniskelamin, int idPelanggan){
+    public Pelanggan(String nama, String alamat, String jeniskelamin, int idPelanggan){
         super(nama,alamat,jeniskelamin);
         this.idPelanggan = idPelanggan;
     }

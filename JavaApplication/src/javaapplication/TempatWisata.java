@@ -4,23 +4,30 @@ package javaapplication;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+import java.util.*;
+import java.io.*;
 
 /**
  *
  * @author 1301144328_HendrawanIF3008
  */
 public class TempatWisata {
+    private int idWisata;
     private String nama;
     private String kota;
     private String provinsi;
 
-    public TempatWisata(String nama, String kota, String provinsi) {
+    public TempatWisata(int idWisata,String nama, String kota, String provinsi) {
+        this.idWisata = idWisata;
         this.nama = nama;
         this.kota = kota;
         this.provinsi = provinsi;
     }
 
+    public int getId(){
+        return idWisata;
+    }
+    
     public String getNama() {
         return nama;
     }

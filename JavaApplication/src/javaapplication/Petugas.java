@@ -5,14 +5,17 @@ package javaapplication;
  * and open the template in the editor.
  */
 
+import java.util.*;
+import java.io.*;
+
 /**
  *
  * @author MR.SBS
  */
-public class Petugas extends Orang {
+public class Petugas extends Orang implements Serializable {
     int idPetugas;
     
-    public Petugas(String nama, String alamat, char jeniskelamin, int idPetugas){
+    public Petugas(String nama, String alamat, String jeniskelamin, int idPetugas){
         super(nama,alamat,jeniskelamin);
         this.idPetugas = idPetugas;
     }

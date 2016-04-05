@@ -13,9 +13,9 @@ package javaapplication;
 public abstract class Orang {
     private String nama;
     private String alamat;
-    private char jenisKelamin; 
+    private String jenisKelamin; 
 
-    public Orang(String nama, String alamat, char jenisKelamin) {
+    public Orang(String nama, String alamat, String jenisKelamin) {
         this.nama = nama;
         this.alamat = alamat;
         this.jenisKelamin = jenisKelamin;
@@ -25,7 +25,7 @@ public abstract class Orang {
         return nama;
     }
 
-    public char getJenisKelamin() {
+    public String getJenisKelamin() {
         return jenisKelamin;
     }
 
@@ -41,7 +41,7 @@ public abstract class Orang {
         this.alamat = alamat;
     }
 
-    public void setJenisKelamin(char jenisKelamin) {
+    public void setJenisKelamin(String jenisKelamin) {
         this.jenisKelamin = jenisKelamin;
     }
     public abstract String display();
