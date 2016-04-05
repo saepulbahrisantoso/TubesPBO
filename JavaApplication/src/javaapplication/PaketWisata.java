@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -5,48 +6,55 @@
  */
 package javaapplication;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Amalia
  */
 public class PaketWisata {
-    private TempatWisata[] daftarTujuanWisata;
+    private ArrayList<TempatWisata> daftarTujuanWisata = new ArrayList<TempatWisata>();
     private String JenisWisata; 
     private int Kapasitas;
-    private int nTempat;
     private double Biaya;
 	
-    public PaketWisata(){
-        nTempat = 0;
+    public PaketWisata(TempatWisata w, String JW, int Kap, double Biaya){
+        
     }
+    
     public void addTempatWisata(TempatWisata w){
-        if(nTempat<Kapasitas){
-            this.w[nTempat]=w;
-            nTempat++;
-        }
+        daftarTujuanWisata.add(w);
     }
-	
+    
+    public ArrayList<TempatWisata> getAllWisata(){
+        return daftarTujuanWisata;
+    }
+    
+    public int getNWisata(){
+        return daftarTujuanWisata.size();
+    }
+    
     public double getBiaya(){
         return Biaya;
     }
-	
+    
     public String getJenisWisata(){
         return JenisWisata;
     }
-	
+    
     public int getKapasitas(){
         return Kapasitas;
     }
+    
+    public void setKapasitas(int Kapasitas){
+        this.Kapasitas=Kapasitas;
+    }
 	
-	public void setKapasitas(int Kapasitas){
-            this.Kapasitas=Kapasitas;
-	}
+    public void setBiaya(int Biaya){
+	this.Biaya=Biaya;
+    }
 	
-	public void setBiaya(int Biaya){
-		this.Biaya=Biaya;
-	}
-	
-	public void setJenisWisata(String JenisWisata){
-		this.JenisWisata=JenisWisata;
-	}
+    public void setJenisWisata(String JenisWisata){
+        this.JenisWisata=JenisWisata;
+    }
 }

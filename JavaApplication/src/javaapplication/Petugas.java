@@ -1,3 +1,4 @@
+package javaapplication;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -9,16 +10,23 @@
  * @author MR.SBS
  */
 public class Petugas extends Orang {
-    String idPetugas;
+    int idPetugas;
     
-    public Petugas(String nama, String alamat, char jeniskelamin, String idPetugas){
+    public Petugas(String nama, String alamat, char jeniskelamin, int idPetugas){
         super(nama,alamat,jeniskelamin);
         this.idPetugas = idPetugas;
     }
-    void setId(String idPetugas){
+    void setId(int idPetugas){
         this.idPetugas=idPetugas;
     }
-    String getId(){
+    int getId(){
         return idPetugas;
+    }
+    @Override
+    public String display() {
+       return (" Id Petugas   : " +this.getId()+ '\n' +
+               " Nama  : "+ this.getNama() + '\n' +
+               " Alamat : "+ this.getAlamat() + '\n' +
+               " Jenis Kelamin : " + this.getJenisKelamin());
     }
 }

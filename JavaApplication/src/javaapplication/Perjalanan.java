@@ -1,3 +1,6 @@
+package javaapplication;
+import java.util.ArrayList;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -10,26 +13,37 @@
  */
 public class Perjalanan {
     PaketWisata paket;
-    int jumlahpelanggan;
-    Pelanggan[] pelanggan;
+    private ArrayList<Pelanggan> turis = new ArrayList<Pelanggan>();
     
-    Perjalanan(){
-        jumlahpelanggan=0;
+    public Perjalanan(Pelanggan p, PaketWisata paket){
+        //addPelanggan(p);
+        
     }
-    void addPelanggan(Pelanggan p){
-        pelanggan[jumlahpelanggan] = p;
-        jumlahpelanggan++;
+    public void addPelanggan(Pelanggan p){
+        turis.add(p);
     }
-    void setPaket(PaketWisata paket){
+    public void removePelanggan(String nama) {
+        for(int i=0; i<turis.size();i++){
+            if(turis.get(i).getNama().equals(nama)){
+                turis.remove(i);
+            }
+        }
+    }
+    
+    public void setPaket(PaketWisata paket){
         this.paket = paket;
     }
-    PaketWisata getPaket(){
+    
+    public PaketWisata getPaket(){
        return paket;
     }
-    void setJumlahPelanggan(int jumlahpelanggan){
-        this.jumlahpelanggan = jumlahpelanggan;
+    
+    public ArrayList<Pelanggan> getAllPelanggan(){
+        return turis;
     }
-    int getjumlahpelanggan(){
-        return jumlahpelanggan;
+    
+    public int getJumlahPelanggan(){
+        return turis.size();
     }
+    
 }
