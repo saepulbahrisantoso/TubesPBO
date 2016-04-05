@@ -1,3 +1,4 @@
+package javaapplication;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -13,21 +14,11 @@ public class TempatWisata {
     private String nama;
     private String kota;
     private String provinsi;
-    private double harga;
-    private String jenisWisata;
 
-    public TempatWisata(String nama, String kota, String provinsi, double harga, String jenisWisata) {
+    public TempatWisata(String nama, String kota, String provinsi) {
         this.nama = nama;
         this.kota = kota;
         this.provinsi = provinsi;
-        this.harga = harga;
-        this.jenisWisata = jenisWisata;
-    }
-
-    public TempatWisata(String nama, double harga, String jenisWisata) {
-        this.nama = nama;
-        this.harga = harga;
-        this.jenisWisata = jenisWisata;
     }
 
     public String getNama() {
@@ -42,14 +33,6 @@ public class TempatWisata {
         return provinsi;
     }
 
-    public double getHarga() {
-        return harga;
-    }
-
-    public String getJenisWisata() {
-        return jenisWisata;
-    }
-
     public void setNama(String nama) {
         this.nama = nama;
     }
@@ -62,11 +45,10 @@ public class TempatWisata {
         this.provinsi = provinsi;
     }
 
-    public void setHarga(double harga) {
-        this.harga = harga;
-    }
-
-    public void setJenisWisata(String jenisWisata) {
-        this.jenisWisata = jenisWisata;
+    @Override
+    public String toString() {
+       return (" Tempat Wisata   : " +this.getNama()+ '\n' +
+               " Kota  : "+ this.getKota() + '\n' +
+               " Provinsi : " + this.getProvinsi());
     }
 }
